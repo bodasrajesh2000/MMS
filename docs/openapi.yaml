@@ -1,0 +1,33 @@
+openapi: 3.1.0
+info:
+  title: MMS API
+  version: 0.1.0
+paths:
+  /health:
+    get:
+      responses:
+        '200':
+          description: OK
+  /tasks:
+    get:
+      parameters:
+        - in: query
+          name: today
+          schema: { type: string, format: date }
+      responses:
+        '200':
+          description: Task list with statuses
+  /dashboard/kpis:
+    get:
+      parameters:
+        - in: query
+          name: today
+          schema: { type: string, format: date }
+      responses:
+        '200':
+          description: KPI counters
+  /calendar/2026:
+    get:
+      responses:
+        '200':
+          description: Month-indexed task calendar for 2026
